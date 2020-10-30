@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Game - Chat</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon.ico" />
+</head>
+
+<body>
+
+	<nav id="menu">
+
+		<a href="index.html" class="logo">
+			<h1>
+				<img src="img/logo.png" class="logo-img">
+				<spam>GAME - CHAT<spam>
+			</h1>
+		</a>
+
+		<a href="sobre.html" id="btn-sobre"><img src="img/info.png" ></a>
+
+		<div id="user-info-panel">
+			<button id="btn-edt-profile" class="btn-user-info">
+				<img src="img/botao-editar.png" class="btn-user-info-img">
+				Editar perfil
+			</button>
+			<button class="btn-user-info">
+				<img src="img/logout.png" class="btn-user-info-img">
+				Sair
+			</button>
+		</div>
+
+		<div id="user-info">
+			<img src="img/user-info.png" id="user-img">
+			<div id="user-name">User</div>
+			<img src="img/game-info.png" id="btn-show-user-info">
+		</div>
+		
+	</nav>
+	
+	<nav id="tabs-menu">
+
+		<div id="tab-chats" class="tabs">Chats</div>
+
+		<div class="tabs" id="game-chat-1">Game 1
+			<img src="img/botaofechar.png" class="close-tab">
+		</div>
+
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/botaofechar.png" class="close-tab">
+		</div>
+
+	</nav>
+
+	<article>
+
+		<section id="chats">
+			<header class="header-game-chat">
+				<div class="list-functions">
+					Ordenar por:
+					<select id="ordem-games" name="ordem-games" class="chat-list-input">
+						<option value="nenhum" selected="selected">Nenhum</option>
+						<option value="msg-recente">Mensagem mais recente</option>
+						<option value="mais-msg">Mais mensagens</option>
+					</select>
+				</div>
+
+				<div class="list-functions">
+					<input type="text" name="pesquisar" id="pesquisar" class="chat-list-input">
+					<img src="img/search.png" id="search-button">
+				</div>
+			</header>
+
+			<content id="chat-list">
+				<div class="games">
+					<img src="img/not-found.png" class="img_game">
+					Em breve
+					<img src="img/abrir.png" class="expand-img">
+				</div>
+			</content>
+
+		</section>
+
+		<section id="jogo1" class="game-chat">
+			<section id="game-info-panel-1" class="game-info-panel">
+				
+			</section>
+			<header class="header-game-chat">
+				<img src="img/not-found.png" class="img_game">
+				<h2 class="header-text">Nome do jogo</h2>
+				<img src="img/game-info.png" class="expand-img">
+			</header>
+
+			<content id="msg-area">
+				<div class="msg">
+					<div class="sender-name">User 1</div>
+					<spam class="msg-balloon">Teste mensagem imensa kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+					kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+					kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</spam>
+				</div>
+				<div class="msg">
+					<div class="sender-name">User 1</div>
+					<spam class="msg-balloon">OI</spam>
+				</div>
+				<div class="my-msg">
+					<div class="my-name">Eu</div>
+					<spam class="my-msg-balloon">Teste mensagem grande</spam>
+				</div>
+				<div class="msg">
+					<div class="sender-name">User 2</div>
+					<spam class="msg-balloon">OI</spam>
+				</div>
+				<div class="my-msg">
+					<div class="my-name">Eu</div>
+					<spam class="my-msg-balloon">OI</spam>
+				</div>
+				<div class="msg">
+					<div class="sender-name">User 1</div>
+					<spam class="msg-balloon">OI</spam>
+				</div>
+				<div class="msg">
+					<div class="sender-name">User 2</div>
+					<spam class="msg-balloon">Teste mensagem grande</spam>
+				</div>
+			</content>
+
+			<div class="write-msg-area">
+				<textarea></textarea>
+				<button id="btn-send">Enviar</button>
+			</div>
+		</section>
+
+	</article>
+
+</body>
+</html>

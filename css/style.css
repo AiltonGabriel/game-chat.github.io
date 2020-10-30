@@ -1,0 +1,408 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+body{
+	background-color: #05242B;
+	margin: 3vh 2vw;
+}
+
+#menu{
+	float: left;
+	margin-bottom: 3vh;
+	height: 10vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo-img{
+	height: 7vh;
+	float: left;
+}
+
+.logo{
+	flex-grow: 2;
+}
+	
+h1{
+	font-size: 200%;
+	color: #0cc;
+	border: 3px ridge #0cc;
+	border-radius: 10px;
+	display: inline-block;
+	padding: 0.5% 2%;
+	height: 7vh;
+	line-height: 7vh;
+	box-shadow: 0 5px 10px black;
+	background-color: #1B2838;
+}
+
+#btn-sobre{
+	height: 6vh;
+	margin-right: 2%;
+	border-radius: 50%;
+	opacity: 0.5;
+}
+
+#btn-sobre > img{
+	height: 6vh;
+	border: 2px ridge #0cc;
+	border-radius: 50%;
+}
+
+#btn-sobre:hover{
+	opacity: 1;
+	height: 6.5vh;
+	border-width: 3px;
+}
+
+#user-img{
+	height: 6vh;
+	border-radius: 50%;
+}
+
+#user-name{
+	margin: 0 4%;
+	color: #0cc;
+	white-space: nowrap;
+}
+
+#btn-show-user-info{
+	height: 3vh;
+}
+
+#user-info{
+	line-height: 7vh;
+	font-size: 200%;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	opacity: 0.7;
+	border: 3px ridge #0cc;
+	border-radius: 10px;
+	padding: 0.5% 2%;
+	box-shadow: 0 5px 10px black;
+	cursor: context-menu;
+}
+
+#user-info:hover{
+	opacity: 0.9;
+	background-color: #1B2838;
+}
+
+#user-info-panel{
+	position: fixed;
+	top: 12.6vh;
+	right: 2.1vw;
+	width: 14vw;
+	border: 3px ridge #0cc;
+	border-top: 0;
+	border-radius: 5px;
+	display: none;
+}
+
+.btn-user-info{
+	width: 100%;
+	padding: 5% 0;
+	color: #0cc;
+	border: 0;
+	background-color: #1B2838;
+	outline: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+.btn-user-info:hover{
+	font-size: 110%;
+}
+
+#btn-edt-profile{
+	border-bottom: 1px ridge #066;
+}
+
+.btn-user-info-img{
+	height: 2vh;
+	margin-right: 5%;
+}
+
+#tabs-menu{
+	width: 100%;
+	display: flex;
+}	
+
+.tabs{
+	background-color: #1B2838;
+	padding: 1vh 0 1vh 2%;
+	border: ridge #0cc;
+	border-width: 5px 5px 0;
+	border-radius: 5px 10px 0 0; 
+	margin-left: 0.5vw;
+	color: #0cc;
+	opacity: 0.5;
+	box-shadow: 3px -3px 10px black;
+}
+
+.tabs:hover{
+	opacity: 1;
+	cursor: context-menu;
+}
+
+#tab-chats{
+	margin: 0;
+	padding-right: 2%;
+}
+
+.close-tab{
+	float: right;
+	margin: 0 0.5vw;
+	opacity: 0;
+	height: 2.5vh;
+}
+
+.close-tab:hover{
+	opacity: 1;
+}
+
+article{
+	width: 100%;
+	border: 5px ridge #0cc;
+	height: 75vh;
+	float: left;
+	color: #0cc;
+	overflow: hidden;
+	border-radius: 0 10px 10px;
+}
+
+/*------------------------------------------------------*/
+/*Lista de chats*/
+
+.list-functions{
+	display: flex; 
+	align-items: center;
+}
+
+.chat-list-input{
+	height: 5vh;
+	border-radius: 5px;
+	background-color: #05242B;
+	color: #0cc;
+	border: 2px ridge #0cc;
+	text-align: center;
+	margin-left: 1vw;
+}
+
+#search-button{
+	margin-left: 0.5vw;
+	height: 5vh;
+	border: 3px ridge #0cc;
+	background-color: #05242B;
+	border-radius: 5px;
+	opacity: 0.7;
+}
+
+#search-button:hover{
+	opacity: 1;
+	height: 5.5vh;
+}
+
+#search-button:active{
+	background-color: #0ee;
+}
+
+.games, .header-game-chat {
+	width: 96%;
+	height: 10vh;
+	padding: 2%;
+	font-size: 200%;
+	border-bottom: 2px ridge #066;
+	opacity: 0.5;
+	line-height: 10vh;
+	cursor: context-menu;
+	overflow: hidden;
+}
+
+.games:hover, .header-game-chat:hover{
+	opacity: 1;
+}
+
+.expand-img{
+	float: right;
+	height: 7vh;
+	margin: 1%;
+}
+
+.img_game{
+	height: 10vh;
+	/*width: 10.4%;*/
+	margin-right: 2%;
+	float: left;
+	border: 2px ridge #0cc;
+	box-shadow: 5px 5px 10px black;
+}
+
+#chat-list{
+	height: 60vh;
+}
+
+
+content::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: rgba(30,30,30,0.2)
+}
+
+content::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+content::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #077;
+}
+
+/*-------------------------------------------------------------*/
+/*Chats abertos*/
+
+.game-info-panel{
+	width: 100%;
+	/*height: 62vh;*/
+}
+
+.header-game-chat{
+	padding: 1% 2%;
+	float: left;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0px 5px 10px black;
+	background-color: #1B2838;
+}
+
+.header-text{
+	font-weight: normal;
+	font-size: 120%;
+	white-space: nowrap;
+}
+
+#msg-area{
+	float: left;
+	height: 50vh;
+	width: 100%;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.msg, .my-msg{
+	margin: 3%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.my-msg{
+	justify-content: flex-end;
+}
+
+.msg-balloon{
+	background-color: #1B2838;
+	border: 1px ridge #0cc;
+	padding: 1% 5%;
+	border-radius: 0 5px 5px;
+	box-shadow: 3px 3px 10px black; 
+}
+
+.sender-name, .my-name{
+	padding: 1% 0.2% 0.3%;
+	width: 100%;
+	color: #0aa;
+	font-weight: bold;
+}
+
+.my-name{
+	text-align: right;
+}
+
+.my-msg-balloon{
+	background-color: #0cc;
+	border: 1px ridge #0cc;
+	padding: 1% 5%;
+	border-radius: 5px 5px 0;
+	box-shadow: -3px -3px 10px black;
+	color: #1B2838;
+}
+
+.write-msg-area{
+	float: left;
+	width: 98%;
+	height: 6vh;
+	margin: 1%;
+	display: flex;
+	border-radius: 20px;
+	box-shadow: 0px -3px 10px black;
+}
+
+textarea{
+	flex-grow: 8;
+	text-align: right;
+	padding: 0 2%;
+	line-height: 4.5vh;
+	font-size: 120%;
+	border-radius: 20px 0 0 20px;
+	border: 3px ridge #0cc;
+	border-right: 0;
+	background-color: #1B2838;
+	color: #099;
+	resize: none;
+	outline: none;
+}
+
+#btn-send{
+	flex-grow: 1;
+	border-radius: 0 20px 20px 0;
+	border: 3px ridge #0cc;
+	background-color: transparent;
+	color: #0cc;
+	font-weight: bold;
+	opacity: 1;
+	outline: none;
+}
+
+#btn-send:hover{
+	opacity: 0.7;
+}
+
+#btn-send:active{
+	border-width: 5px;
+}
+
+/*----------------------------------------------------*/
+/* Obs: Se tirar o comentário abaixo for tirado e a parte não comentada for comentada
+		você conseguirá ter uma visualização da parte de mensagens.*/
+
+/*
+#chats{
+	display: none;
+}
+#game-chat-1{
+	opacity: 1;
+}*/
+
+
+
+.game-chat{
+	display: none;
+}
+#tab-chats{
+	opacity: 1;
+}
