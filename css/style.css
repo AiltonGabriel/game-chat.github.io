@@ -1,3 +1,4 @@
+/* Tags gerais */
 *{
 	margin: 0;
 	padding: 0;
@@ -9,6 +10,16 @@ body{
 	margin: 3vh 2vw;
 }
 
+button{
+	cursor: pointer;
+}
+
+img{
+	object-fit: cover;
+}
+
+/*--------------------------------------------*/
+/* Cabeçalho */
 #menu{
 	float: left;
 	margin-bottom: 3vh;
@@ -62,6 +73,7 @@ h1{
 
 #user-img{
 	height: 6vh;
+	width: 6vh;
 	border-radius: 50%;
 }
 
@@ -71,11 +83,12 @@ h1{
 	white-space: nowrap;
 }
 
-#btn-show-user-info{
+#btn-profile-link-img{
 	height: 3vh;
+	transform: rotate(270deg);
 }
 
-#user-info{
+#profile-link{
 	line-height: 7vh;
 	font-size: 200%;
 	font-weight: bold;
@@ -85,56 +98,216 @@ h1{
 	opacity: 0.7;
 	border: 3px ridge #0cc;
 	border-radius: 10px;
-	padding: 0.5% 2%;
+	padding: 0.5vh 2vw;
 	box-shadow: 0 5px 10px black;
-	cursor: context-menu;
+	text-decoration: none;
+	cursor: pointer;
 }
 
-#user-info:hover{
+#profile-link:hover{
 	opacity: 0.9;
 	background-color: #1B2838;
 }
 
-#user-info-panel{
-	position: fixed;
-	top: 12.6vh;
-	right: 2.1vw;
-	width: 14vw;
-	border: 3px ridge #0cc;
-	border-top: 0;
-	border-radius: 5px;
-	display: none;
+/*--------------------------------------------*/
+/* Página de perfil */
+
+.profile-page-content{
+	width: 100%;
+	height: 100%;
+	padding: 2%;
+	display: flex;
 }
 
-.btn-user-info{
+.profile-img-actions{
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-img-actions img{
+	height: 30vh;
+	width: 30vh;
+	border-radius: 50%;
+	border: 2px ridge #0cc;
+	margin-bottom: 10%;
+}
+
+#change-img{
+	opacity: 0;
+	position: absolute;
+	background-color: #05242B;
+	cursor: pointer;
+}
+
+#change-img:hover{
+	opacity: 0.7;
+}
+
+#change-img:active{
+	opacity: 1;
+}
+
+.profile-form{
+	margin: 0 5%;
+	height: 90%;
+	border-left: 2px ridge #0cc;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
 	width: 100%;
-	padding: 5% 0;
-	color: #0cc;
-	border: 0;
-	background-color: #1B2838;
+}
+
+.profile-form h2{
+	white-space: nowrap;
+	margin-right: 5%;
+}
+
+.profile-actions{
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.profile-actions .form-btn, .profile-img-actions .form-btn{
+	line-height: calc(5vh + 2%);
+	font-size: 120%;
+	opacity: 0.7;
+}
+
+.profile-actions .form-btn:hover, .profile-img-actions .form-btn:hover{
+	opacity: 0.9;
+}
+
+.profile-actions .form-btn:active, .profile-img-actions .form-btn:active{
+	font-size: 130%;
+	opacity: 1;
+	border: 2px ridge #0cc;
+}
+
+.form-btn img{
+	height: 5vh;
+	width: 5vh;
+	margin-right: 2%;
+	float: right;
+	padding-left: 2%;
+	border: 2px ridge #05242b;
+	border-width: 0 0 0 2px;
+	border-radius: 0;
+}
+
+.form-btn *{
+	font-size: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+/*-------------------------------------------*/
+/* Páginas de registro e cadastro */
+
+.form{
+	width: 35%;
+	height: 85%;
+	margin: 3% 32.5%;
+	background-color: #1B283866;
+	border-radius: 5px;
+	border:1px ridge #0cc;
+	box-shadow: 0 0px 10px 2px #055;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	white-space: nowrap;
+}
+
+label{
+	display: flex;
+	font-size: 150%;
+	justify-content: space-between;
+	width: 90%;
+	height: 7vh;
+	line-height: 7vh;
+	margin: 0 5%;
+}
+
+label > input{
+	float: right;
+	width: 70%;
+	border-radius: 20px;
+	border: 2px ridge #0cc;
+	background-color: #05242B;
 	outline: none;
+	text-align: center;
+	color: #0cc;
+	font-size: 75%;
+	padding: 0 2%;
+}
+
+#termos-label{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-weight: bold;
+	font-size: 80%;
 }
 
-.btn-user-info:hover{
-	font-size: 110%;
+#termos-label > input{
+	float: left;
+	width: auto;
+	margin: 0 3%;
+	cursor: pointer;
 }
 
-#btn-edt-profile{
-	border-bottom: 1px ridge #066;
+#termos-label > a{
+	margin-left: 1%;
+	color: #666666;
 }
 
-.btn-user-info-img{
-	height: 2vh;
-	margin-right: 5%;
+.form-btn{
+	width: 100%;
+	padding: 2% 0;
+	font-size: 100%;
+	border-radius: 20px;
+	background-color: #0cc;
+	outline: none;
+	border: 0;
 }
+
+.form-btn:active{
+	font-size: 90%;
+}
+
+.link-form{
+	color: #0cc;
+	text-align: center;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.link-form:hover{
+	opacity: 0.7;
+}
+
+/*-------------------------------------------*/
+/* Página de termos */
+
+#termos-list{
+	margin: 2%;
+}
+
+#termos-list > p{
+	margin: 2% 3% 4%;
+	line-height: 130%;
+}
+
+/*-------------------------------------------*/
+/* Menu de abas contendo os chats */
 
 #tabs-menu{
 	width: 100%;
 	display: flex;
+	overflow-x: auto;
+	white-space: nowrap;
 }	
 
 .tabs{
@@ -146,12 +319,14 @@ h1{
 	margin-left: 0.5vw;
 	color: #0cc;
 	opacity: 0.5;
-	box-shadow: 3px -3px 10px black;
+	box-shadow: 1px -1px 6px 0.5px black;
+	cursor: context-menu;
+	display: flex;
+	align-items: center;
 }
 
 .tabs:hover{
 	opacity: 1;
-	cursor: context-menu;
 }
 
 #tab-chats{
@@ -164,6 +339,7 @@ h1{
 	margin: 0 0.5vw;
 	opacity: 0;
 	height: 2.5vh;
+	cursor: pointer;
 }
 
 .close-tab:hover{
@@ -198,7 +374,7 @@ article{
 	margin-left: 1vw;
 }
 
-#search-button{
+#search-button, #asc-desc-btn{
 	margin-left: 0.5vw;
 	height: 5vh;
 	border: 3px ridge #0cc;
@@ -207,17 +383,16 @@ article{
 	opacity: 0.7;
 }
 
-#search-button:hover{
+#search-button:hover, #asc-desc-btn:hover{
 	opacity: 1;
 	height: 5.5vh;
 }
 
-#search-button:active{
+#search-button:active, #asc-desc-btn:active{
 	background-color: #0ee;
 }
 
 .games, .header-game-chat {
-	width: 96%;
 	height: 10vh;
 	padding: 2%;
 	font-size: 200%;
@@ -226,22 +401,32 @@ article{
 	line-height: 10vh;
 	cursor: context-menu;
 	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	white-space: nowrap;
 }
 
 .games:hover, .header-game-chat:hover{
 	opacity: 1;
 }
 
+.header-game-chat{
+	padding: 1% 2%;
+	box-shadow: 0px 5px 10px black;
+	background-color: #1B2838;
+}
+
 .expand-img{
 	float: right;
 	height: 7vh;
 	margin: 1%;
+	cursor: pointer;
 }
 
 .img_game{
 	height: 10vh;
-	/*width: 10.4%;*/
-	margin-right: 2%;
+	margin-right: 10%;
 	float: left;
 	border: 2px ridge #0cc;
 	box-shadow: 5px 5px 10px black;
@@ -252,20 +437,18 @@ article{
 }
 
 
-content::-webkit-scrollbar-track
-{
+.content::-webkit-scrollbar-track,  #tabs-menu::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
     background-color: rgba(30,30,30,0.2)
 }
 
-content::-webkit-scrollbar
-{
+.content::-webkit-scrollbar,  #tabs-menu::-webkit-scrollbar{
     width: 12px;
+    height: 10px;
 }
 
-content::-webkit-scrollbar-thumb
-{
+.content::-webkit-scrollbar-thumb, #tabs-menu::-webkit-scrollbar-thumb{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #077;
@@ -276,17 +459,13 @@ content::-webkit-scrollbar-thumb
 
 .game-info-panel{
 	width: 100%;
-	/*height: 62vh;*/
-}
-
-.header-game-chat{
-	padding: 1% 2%;
-	float: left;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	box-shadow: 0px 5px 10px black;
-	background-color: #1B2838;
+	background-image: url(https://steamcdn-a.akamaihd.net/steam/apps/292030/page_bg_generated_v6b.jpg?t=1602588729);
+	height: 62vh;
+	overflow-y: auto;
+	background-position: center;
+  	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	display: none;
 }
 
 .header-text{
@@ -308,10 +487,19 @@ content::-webkit-scrollbar-thumb
 	margin: 3%;
 	display: flex;
 	flex-wrap: wrap;
+	word-wrap: break-word;
+	align-items: flex-end;
 }
 
 .my-msg{
 	justify-content: flex-end;
+}
+
+.msg-hora{
+	font-size: 80%;
+	margin: 0.7% 0.7% 0;
+	opacity: 0.5;
+	white-space: nowrap;
 }
 
 .msg-balloon{
@@ -319,18 +507,9 @@ content::-webkit-scrollbar-thumb
 	border: 1px ridge #0cc;
 	padding: 1% 5%;
 	border-radius: 0 5px 5px;
-	box-shadow: 3px 3px 10px black; 
-}
-
-.sender-name, .my-name{
-	padding: 1% 0.2% 0.3%;
-	width: 100%;
-	color: #0aa;
-	font-weight: bold;
-}
-
-.my-name{
-	text-align: right;
+	box-shadow: 3px 3px 10px black;
+	overflow: wrap; 
+	max-width: 90%;
 }
 
 .my-msg-balloon{
@@ -340,7 +519,37 @@ content::-webkit-scrollbar-thumb
 	border-radius: 5px 5px 0;
 	box-shadow: -3px -3px 10px black;
 	color: #1B2838;
+	max-width: 90%;
 }
+
+.sender-name, .my-name{
+	padding: 1% 0.2% 0.3%;
+	width: 100%;
+	color: #0aa;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
+
+.sender-img{
+	margin-right: 1%;
+	height: 5vh;
+	width: 5vh;
+	border-radius: 50%;
+	border: 2px ridge #0cc;
+}
+
+.my-name > .sender-img{
+	margin-right: 0;
+	margin-left: 1%;
+}
+
+.my-name{
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+}
+
+
 
 .write-msg-area{
 	float: left;
@@ -386,6 +595,74 @@ textarea{
 	border-width: 5px;
 }
 
+
+/*-------------------------------------------------------------*/
+/* Transições para as ações nos elementos */
+
+#btn-sobre:hover, #profile-link:hover, #change-img:hover,#change-img:active,
+.profile-actions .form-btn:hover, .profile-img-actions .form-btn:hover,
+.profile-actions .form-btn:active, .profile-img-actions .form-btn:active,
+.link-form:hover, .tabs:hover, .close-tab:hover, #search-button:hover, #asc-desc-btn:hover,
+#search-button:active, #asc-desc-btn:active, .games:hover, .header-game-chat:hover,
+#btn-send:hover{
+	transition: 0.05s linear;
+}
+
+/*-------------------------------------------------------------*/
+/* Dispositivos Móveis */
+@media (orientation: portrait) {
+ 	.form{
+		width: 90%;
+		height: 60%;
+		margin: 20% 5%;
+		font-size: 200%;
+	}
+
+	#termos-label{
+		font-size: 100%;
+	}
+
+	.close-tab{
+		opacity: 1;
+		height: 2vh;
+	}
+
+	.game-chat *{
+		font-size: 140%;
+	}
+	.tabs{
+		font-size: 200%;
+	}
+	.btn-user-action{
+		font-size: 200%;
+	}
+
+	.profile-page-content{
+		font-size: 175%;
+	}
+
+	.profile-img-actions img{
+		height: 30vw;
+		width: 30vw;
+	}
+
+	.profile-form label{
+		flex-direction: column;
+		height: 10vh;
+	}
+
+	.profile-form input{
+		width: 100%;
+		font-size: 130%;
+	}
+
+	.chat-list-input{
+		font-size: 100%;
+		width: 90%;
+	}
+
+}
+
 /*----------------------------------------------------*/
 /* Obs: Se tirar o comentário abaixo for tirado e a parte não comentada for comentada
 		você conseguirá ter uma visualização da parte de mensagens.*/
@@ -397,7 +674,6 @@ textarea{
 #game-chat-1{
 	opacity: 1;
 }*/
-
 
 
 .game-chat{

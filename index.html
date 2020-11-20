@@ -9,48 +9,83 @@
 
 <body>
 
-	<nav id="menu">
+	<header>
+		<nav id="menu">
+			
+			<div class="logo">
+				<a href="index.html">
+					<h1>
+						<img src="img/logo.png" class="logo-img">
+						<spam>GAME - CHAT</spam>
+					</h1>
+				</a>
+			</div>
+
+			<a href="sobre.html" id="btn-sobre"><img src="img/info.png" ></a>
 		
-		<header class="logo">
-			<a href="index.html">
-				<h1>
-					<img src="img/logo.png" class="logo-img">
-					<spam>GAME - CHAT<spam>
-				</h1>
+
+			<a href="perfil.html" id="profile-link">
+				<img src="img/user-info.png" id="user-img">
+				<div id="user-name">User</div>
+				<img src="img/game-info.png" id="btn-profile-link-img">
 			</a>
-		</header>
-
-		<a href="sobre.html" id="btn-sobre"><img src="img/info.png" ></a>
-
-		<div id="user-info-panel">
-			<button id="btn-edt-profile" class="btn-user-info">
-				<img src="img/botao-editar.png" class="btn-user-info-img">
-				Editar perfil
-			</button>
-			<button class="btn-user-info">
-				<img src="img/logout.png" class="btn-user-info-img">
-				Sair
-			</button>
-		</div>
-
-		<div id="user-info">
-			<img src="img/user-info.png" id="user-img">
-			<div id="user-name">User</div>
-			<img src="img/game-info.png" id="btn-show-user-info">
-		</div>
-		
-	</nav>
+			
+		</nav>
+	</header>
 	
 	<nav id="tabs-menu">
 
 		<div id="tab-chats" class="tabs">Chats</div>
 
 		<div class="tabs" id="game-chat-1">Game 1
-			<img src="img/botaofechar.png" class="close-tab">
+			<img src="img/close.png" class="close-tab">
 		</div>
 
 		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/botaofechar.png" class="close-tab">
+			<img src="img/close.png" class="close-tab">
+		</div>
+
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Nome muito grande
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
+		</div>
+		<div class="tabs" id="game-chat-2">Game 2
+			<img src="img/close.png" class="close-tab">
 		</div>
 
 	</nav>
@@ -62,10 +97,11 @@
 				<div class="list-functions">
 					Ordenar por:
 					<select id="ordem-games" name="ordem-games" class="chat-list-input">
-						<option value="nenhum" selected="selected">Nenhum</option>
 						<option value="msg-recente">Mensagem mais recente</option>
-						<option value="mais-msg">Mais mensagens</option>
+						<option value="max-msg">Maior número de mensagens</option>
+						<option value="max-players">Maior número de jogadores</option>
 					</select>
+					<img src="img/down-up-arrow.png" id="asc-desc-btn">
 				</div>
 
 				<div class="list-functions">
@@ -74,19 +110,21 @@
 				</div>
 			</header>
 
-			<content id="chat-list">
+			<div class="content" id="chat-list">
 				<div class="games">
-					<img src="img/not-found.png" class="img_game">
-					Em breve
-					<img src="img/abrir.png" class="expand-img">
+					<div>
+						<img src="img/not-found.png" class="img_game">
+						Em breve
+					</div>
+					<img src="img/open.png" class="expand-img">
 				</div>
-			</content>
+			</div>
 
 		</section>
 
 		<section id="jogo1" class="game-chat">
 			<section id="game-info-panel-1" class="game-info-panel">
-				
+				Em breve!	
 			</section>
 			<header class="header-game-chat">
 				<img src="img/not-found.png" class="img_game">
@@ -94,38 +132,50 @@
 				<img src="img/game-info.png" class="expand-img">
 			</header>
 
-			<content id="msg-area">
+			<div class="content" id="msg-area">
 				<div class="msg">
-					<div class="sender-name">User 1</div>
+					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
+					<spam class="msg-balloon">OI</spam>
+					<div class="msg-hora">12:30</div>
+				</div>
+				<div class="msg">
+					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
 					<spam class="msg-balloon">Teste mensagem imensa kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 					kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 					kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</spam>
+					<spam class="msg-hora">12:30</spam>
 				</div>
 				<div class="msg">
-					<div class="sender-name">User 1</div>
+					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
 					<spam class="msg-balloon">OI</spam>
+					<div class="msg-hora">12:30</div>
 				</div>
 				<div class="my-msg">
-					<div class="my-name">Eu</div>
+					<div class="my-name"><img src="img/user-info.png" class="sender-img">Eu</div>
+					<spam class="msg-hora">12:30</spam>
 					<spam class="my-msg-balloon">Teste mensagem grande</spam>
 				</div>
 				<div class="msg">
-					<div class="sender-name">User 2</div>
+					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 2</div>
 					<spam class="msg-balloon">OI</spam>
+					<spam class="msg-hora">12:30</spam>
 				</div>
 				<div class="my-msg">
-					<div class="my-name">Eu</div>
+					<div class="my-name"><img src="img/user-info.png" class="sender-img">Eu</div>
+					<spam class="msg-hora">12:30</spam>
 					<spam class="my-msg-balloon">OI</spam>
 				</div>
 				<div class="msg">
-					<div class="sender-name">User 1</div>
+					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
 					<spam class="msg-balloon">OI</spam>
+					<spam class="msg-hora">12:30</spam>
 				</div>
 				<div class="msg">
-					<div class="sender-name">User 2</div>
+					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 2</div>
 					<spam class="msg-balloon">Teste mensagem grande</spam>
+					<spam class="msg-hora">12:30</spam>
 				</div>
-			</content>
+			</div>
 
 			<div class="write-msg-area">
 				<textarea></textarea>

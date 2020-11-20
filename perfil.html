@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Editar Perfil</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon.ico" />
+</head>
+
+<body>
+	<header>
+		<nav id="menu">
+			
+			<div class="logo">
+				<a href="index.html">
+					<h1>
+						<img src="img/logo.png" class="logo-img">
+						<spam>GAME - CHAT</spam>
+					</h1>
+				</a>
+			</div>
+
+			<a href="sobre.html" id="btn-sobre"><img src="img/info.png" ></a>
+		</nav>
+	</header>
+
+	<article>
+		<div class="profile-page-content content">
+			<div class="profile-img-actions">
+				<img src="img/user-info.png" id="profile-img">
+				<img src="img/change-img.png" id="change-img">
+				<button class="form-btn">
+					<label for="avatar">Alterar Imagem</label>
+					<input type="file" id="avatar" name="avatar" accept="image/png" style="display: none;">
+				</button>
+			</div>
+			<div class="profile-form">
+				<label>
+					<h2>Nome de exibição: </h2>
+					<input type="text" name="name" value="Ailton Gabriel" disabled="true">
+				</label>
+				<div class="profile-actions">
+					<button class="form-btn"><img src="img/edit.png">Alterar nome de exibição</button>
+					<button class="form-btn"><img src="img/reset-password.png">Alterar senha</button>
+					<button class="form-btn"><img src="img/logout.png">Logout</button>
+				</div>
+			</div>
+		</div>
+	</article>
+
+</body>
+</html>
