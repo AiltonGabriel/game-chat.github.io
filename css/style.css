@@ -201,7 +201,6 @@ h1{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	white-space: nowrap;
 	cursor: pointer;
 }
 
@@ -272,6 +271,7 @@ label > input{
 	background-color: #0cc;
 	outline: none;
 	border: 0;
+	white-space: nowrap;
 }
 
 .form-btn:active{
