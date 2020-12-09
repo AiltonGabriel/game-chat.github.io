@@ -864,10 +864,6 @@ textarea{
    		height: 8vh;
 	}
 
-	textarea{
-		text-align: left;
-	}
-
 	.header-game-chat{
 		font-size: 250%;
 		overflow-x: auto;
