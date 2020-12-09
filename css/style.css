@@ -1,13 +1,25 @@
 /* Tags gerais */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 *{
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 body{
 	background-color: #05242B;
 	margin: 3vh 2vw;
+}
+
+#wrapper{
+	width: 100%;
+	border: 5px ridge #0cc;
+	height: 75vh;
+	float: left;
+	color: #0cc;
+	overflow: hidden;
+	border-radius: 0 10px 10px;
 }
 
 button{
@@ -16,6 +28,30 @@ button{
 
 img{
 	object-fit: cover;
+}
+
+ul, ol{
+	list-style-position: inside;
+}
+
+.erro-msg{
+	background-color: #DC143C;
+	margin: 0 2%;
+	padding: 2%;
+	color: white;
+	border-radius: 5px;
+	border: 1px ridge #B22222;
+	text-align: center;
+	white-space: normal;
+	display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #05242B inset !important;
+    -webkit-text-fill-color: #0cc !important;
 }
 
 /*--------------------------------------------*/
@@ -75,11 +111,14 @@ h1{
 	height: 6vh;
 	width: 6vh;
 	border-radius: 50%;
+	border: 2px ridge #0cc;
 }
 
 #user-name{
 	margin: 0 4%;
 	color: #0cc;
+	overflow-y: hidden;
+	overflow-x: auto;
 	white-space: nowrap;
 }
 
@@ -102,6 +141,8 @@ h1{
 	box-shadow: 0 5px 10px black;
 	text-decoration: none;
 	cursor: pointer;
+	max-width: 35vw;
+	min-width: 15vw;
 }
 
 #profile-link:hover{
@@ -162,6 +203,10 @@ h1{
 	margin-right: 5%;
 }
 
+#username:focus{
+	color: white;
+}
+
 .profile-actions{
 	width: 90%;
 	display: flex;
@@ -204,13 +249,46 @@ h1{
 	cursor: pointer;
 }
 
+#logout-btn{
+	background-color: #DC143C;
+}
+
+#save-username-btn{
+	background-color: #FFA500;
+	display: none;
+}
+
+#perfil-erro-msg{
+	width: 90%;
+	margin: 0 5%;
+	height: 2vh;
+}
+
 /*-------------------------------------------*/
-/* Páginas de registro e cadastro */
+/* Páginas de login e cadastro */
+
+.wrapper-form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#email-check-btn{
+	transition: all .3s ease-out;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    border:0;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #0cc;
+    font-weight: bold;
+}
 
 .form{
-	width: 35%;
-	height: 85%;
-	margin: 3% 32.5%;
+	width: 40%;
+	height: 90%;
 	background-color: #1B283866;
 	border-radius: 5px;
 	border:1px ridge #0cc;
@@ -289,15 +367,52 @@ label > input{
 }
 
 /*-------------------------------------------*/
-/* Página de termos */
+/* Página de termos e sobre*/
 
-#termos-list{
+.lista{
 	margin: 2%;
+	font-size: 120%;
+	color: #0bb;
 }
 
-#termos-list > p{
-	margin: 2% 3% 4%;
-	line-height: 130%;
+.lista *{
+	list-style-position: outside;
+}
+
+.li-title{
+	display: inline-block;
+	margin: 1%;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.lista li{
+	margin: 2% 3%;
+}
+
+.lista li > *{
+	margin-left: 1.5%;
+}
+
+.lista a{
+	margin-left: 0;
+	color: #099;
+}
+
+.lista a:hover{
+	color: #055;
+}
+
+#app-info{
+	text-align: center;
+	margin: 3%;
+	font-size: 150%;
+	font-weight: bold;
+	text-shadow: 0px 0px 10px black;
+}
+
+#app-info *{
+	margin-top: 1%;
 }
 
 /*-------------------------------------------*/
@@ -325,13 +440,10 @@ label > input{
 	align-items: center;
 }
 
-.tabs:hover{
-	opacity: 1;
-}
-
 #tab-chats{
 	margin: 0;
 	padding-right: 2%;
+	opacity: 1;
 }
 
 .close-tab{
@@ -346,22 +458,18 @@ label > input{
 	opacity: 1;
 }
 
-article{
-	width: 100%;
-	border: 5px ridge #0cc;
-	height: 75vh;
-	float: left;
-	color: #0cc;
-	overflow: hidden;
-	border-radius: 0 10px 10px;
-}
-
 /*------------------------------------------------------*/
 /*Lista de chats*/
+
+.loading-img{
+	width: 100%;
+	height: 100%;
+}
 
 .list-functions{
 	display: flex; 
 	align-items: center;
+	margin: 2%;
 }
 
 .chat-list-input{
@@ -374,22 +482,31 @@ article{
 	margin-left: 1vw;
 }
 
-#search-button, #asc-desc-btn{
-	margin-left: 0.5vw;
+.list-functions-btn{
+	margin-left: 1vw;
 	height: 5vh;
 	border: 3px ridge #0cc;
 	background-color: #05242B;
 	border-radius: 5px;
 	opacity: 0.7;
+	cursor: pointer;
 }
 
-#search-button:hover, #asc-desc-btn:hover{
+.list-functions-btn:hover{
 	opacity: 1;
 	height: 5.5vh;
 }
 
-#search-button:active, #asc-desc-btn:active{
+.list-functions-btn:active{
 	background-color: #0ee;
+}
+
+#back-search-button{
+	display: none;
+}
+
+#game-list-order{
+	cursor: pointer;
 }
 
 .games, .header-game-chat {
@@ -399,12 +516,16 @@ article{
 	border-bottom: 2px ridge #066;
 	opacity: 0.5;
 	line-height: 10vh;
-	cursor: context-menu;
+	cursor: pointer;
 	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	white-space: nowrap;
+}
+
+#chats .header-game-chat{
+	cursor: context-menu;
 }
 
 .games:hover, .header-game-chat:hover{
@@ -433,25 +554,40 @@ article{
 }
 
 #chat-list{
-	height: 60vh;
+	height: 53vh;
+	overflow-y: auto;
 }
 
+#load-more-btn{
+	padding: 2vh 2%;
+	margin: 0 0 1vh;
+	opacity: 0.7;
+}
 
-.content::-webkit-scrollbar-track,  #tabs-menu::-webkit-scrollbar-track{
+#load-more-btn:hover{
+	opacity: 0.9
+}
+
+.scrollable::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
-    background-color: rgba(30,30,30,0.2)
+    background-color: rgba(30,30,30,0.2);
 }
 
-.content::-webkit-scrollbar,  #tabs-menu::-webkit-scrollbar{
+.scrollable::-webkit-scrollbar{
     width: 12px;
     height: 10px;
 }
 
-.content::-webkit-scrollbar-thumb, #tabs-menu::-webkit-scrollbar-thumb{
+.scrollable::-webkit-scrollbar-thumb{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #077;
+}
+
+.scrollable{
+	scrollbar-color: #077 rgba(30,30,30,0.2);
+	scrollbar-width: thin;
 }
 
 /*-------------------------------------------------------------*/
@@ -459,22 +595,120 @@ article{
 
 .game-info-panel{
 	width: 100%;
-	background-image: url(https://steamcdn-a.akamaihd.net/steam/apps/292030/page_bg_generated_v6b.jpg?t=1602588729);
-	height: 62vh;
+	background-color: #1B2838;
+	height: 53vh;
 	overflow-y: auto;
 	background-position: center;
   	background-repeat: no-repeat;
  	background-size: cover;
+ 	padding: 2%;
+ 	color: #ddd;
  	display: none;
+}
+
+.game-info-panel > nav{
+	width: 20%;
+	height: 100%;
+	margin-right: 1%;
+	overflow: hidden;
+}
+
+.game-info-panel > nav > div{
+	padding: 5%;
+}
+
+.game-info-panel > nav > div:first-child{
+	background-color: rgba(200, 200, 200, 0.4);
+}
+
+.game-info-panel > nav > div{
+	background-color: rgba(200, 200, 200, 0.2);	
+	cursor: pointer;
+}
+
+.game-info-panel > nav > div:hover{
+	background-color: rgba(200, 200, 200, 0.25);
+}
+
+.game-info-panel > section{
+	width: 75%;
+	height: 100%;
+	overflow-y: auto;
+	display: none;
+}
+
+.game-info-panel > section > *{
+	padding: 1%;
+}
+
+.game-info-panel > .game-info{
+	display: block;
+}
+
+.game-info-panel video, .game-info-panel img{
+	width: 46%;
+}
+
+.game-info-panel a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.game-info-panel > *{
+	float: left;
+	background-color: rgba(200, 200, 200, 0.1);
+}
+
+.game-info > *{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.game-info h3{
+	color: #0cc;
+}
+
+.game-requirements h4{
+	margin: 3% 0 1.5%;
+}
+
+.game-requirements > div h4:first-child{
+	margin-top: 0;
+}
+
+.game-requirements .formatted > strong{
+	text-decoration: underline;
+}
+
+.game-info img{
+	height: 92%;
+	width: 96%;
+	object-fit: cover;
+}
+
+.bar{
+	border-radius: 5px;
+	background-color: #0aa;
+	padding: 1%;
+	margin: 0 0.5% 1% 0.5%;
 }
 
 .header-text{
 	font-weight: normal;
 	font-size: 120%;
 	white-space: nowrap;
+	text-align: center;
+	width: 100%;
+	overflow-x: auto;
 }
 
-#msg-area{
+.games > div{
+	overflow: auto;
+	width: 100%;
+}
+
+.msg-area{
 	float: left;
 	height: 50vh;
 	width: 100%;
@@ -516,7 +750,7 @@ article{
 	background-color: #0cc;
 	border: 1px ridge #0cc;
 	padding: 1% 5%;
-	border-radius: 5px 5px 0;
+	border-radius: 5px 0px 5px 5px;
 	box-shadow: -3px -3px 10px black;
 	color: #1B2838;
 	max-width: 90%;
@@ -549,8 +783,6 @@ article{
 	justify-content: flex-start;
 }
 
-
-
 .write-msg-area{
 	float: left;
 	width: 98%;
@@ -565,7 +797,7 @@ textarea{
 	flex-grow: 8;
 	text-align: right;
 	padding: 0 2%;
-	line-height: 4.5vh;
+	line-height: 5vh;
 	font-size: 120%;
 	border-radius: 20px 0 0 20px;
 	border: 3px ridge #0cc;
@@ -576,7 +808,7 @@ textarea{
 	outline: none;
 }
 
-#btn-send{
+.btn-send{
 	flex-grow: 1;
 	border-radius: 0 20px 20px 0;
 	border: 3px ridge #0cc;
@@ -587,11 +819,11 @@ textarea{
 	outline: none;
 }
 
-#btn-send:hover{
+.btn-send:hover{
 	opacity: 0.7;
 }
 
-#btn-send:active{
+.btn-send:active{
 	border-width: 5px;
 }
 
@@ -602,43 +834,65 @@ textarea{
 #btn-sobre:hover, #profile-link:hover, #change-img:hover,#change-img:active,
 .profile-actions .form-btn:hover, .profile-img-actions .form-btn:hover,
 .profile-actions .form-btn:active, .profile-img-actions .form-btn:active,
-.link-form:hover, .tabs:hover, .close-tab:hover, #search-button:hover, #asc-desc-btn:hover,
-#search-button:active, #asc-desc-btn:active, .games:hover, .header-game-chat:hover,
-#btn-send:hover{
+.link-form:hover, .tabs:hover, .close-tab:hover,.list-functions-btn:hover, .list-functions-btn:active, 
+.games:hover, .header-game-chat:hover, .btn-send:hover, #load-more-btn:hover{
 	transition: 0.05s linear;
 }
 
 /*-------------------------------------------------------------*/
 /* Dispositivos Móveis */
-@media (orientation: portrait) {
+@media (max-width: 750px){
  	.form{
 		width: 90%;
-		height: 60%;
-		margin: 20% 5%;
-		font-size: 200%;
-	}
-
-	#termos-label{
-		font-size: 100%;
+		font-size: 140%;
 	}
 
 	.close-tab{
 		opacity: 1;
-		height: 2vh;
+		margin: 0 1vw;
+		height: 3vh;
 	}
 
 	.game-chat *{
-		font-size: 140%;
+		font-size: 120%;
 	}
-	.tabs{
-		font-size: 200%;
+
+	.write-msg-area{
+   		font-size: 200%;
+   		height: 8vh;
 	}
-	.btn-user-action{
+
+	textarea{
+		text-align: left;
+	}
+
+	.header-game-chat{
+		font-size: 250%;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.msg, .my-msg{
+		margin: 5%;
+	}
+	.msg-balloon, .my-msg-balloon{
+		padding: 2% 5%;
+	}
+
+	.tabs, #load-more-btn{
+		font-size: 150%;
+	}
+
+	#load-more-btn:active{
 		font-size: 200%;
 	}
 
+	#profile-link{
+		width: 35vw;
+	}
+
 	.profile-page-content{
-		font-size: 175%;
+		font-size: 125%;
 	}
 
 	.profile-img-actions img{
@@ -657,28 +911,15 @@ textarea{
 	}
 
 	.chat-list-input{
-		font-size: 100%;
+		font-size: 50%;
+	}
+
+	.game-info-panel video, .game-info-panel img{
 		width: 90%;
 	}
 
-}
+	.game-requirements .formatted{
+		font-size: 50%;
+	}
 
-/*----------------------------------------------------*/
-/* Obs: Se tirar o comentário abaixo for tirado e a parte não comentada for comentada
-		você conseguirá ter uma visualização da parte de mensagens.*/
-
-/*
-#chats{
-	display: none;
-}
-#game-chat-1{
-	opacity: 1;
-}*/
-
-
-.game-chat{
-	display: none;
-}
-#tab-chats{
-	opacity: 1;
 }

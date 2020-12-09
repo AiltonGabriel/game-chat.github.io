@@ -2,9 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="theme-color" content="#05242B">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
 	<title>Editar Perfil</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
+
+	<script src="js/firebase/firebase-app.js"></script>
+	<script src="js/firebase/firebase-analytics.js"></script>
+	<script src="js/firebase/firebase-database.js"></script>
+	<script src="js/firebase/firebase-storage.js"></script>
+	<script src="js/firebase/firebase-auth.js"></script>
+
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
@@ -14,39 +25,41 @@
 			<div class="logo">
 				<a href="index.html">
 					<h1>
-						<img src="img/logo.png" class="logo-img">
+						<img src="img/logo.png" class="logo-img" title="Game-Chat" alt="Imagem do logo do Game-Chat">
 						<spam>GAME - CHAT</spam>
 					</h1>
 				</a>
 			</div>
 
-			<a href="sobre.html" id="btn-sobre"><img src="img/info.png" ></a>
+			<a href="sobre.html" target="_blank" id="btn-sobre"><img src="img/info.png" title="Sobre" alt="Botão Sobre"></a>
 		</nav>
 	</header>
 
-	<article>
-		<div class="profile-page-content content">
+	<article id="wrapper">
+		<section class="profile-page-content content scrollable">
 			<div class="profile-img-actions">
-				<img src="img/user-info.png" id="profile-img">
-				<img src="img/change-img.png" id="change-img">
+				<img src="img/loading-min.gif" id="profile-img" title="Imagem de Perfil" alt="Imagem de prefil do usuário">
+				<img src="img/change-img.png" id="change-img" title="Alterar Imagem de Perfil" alt="Botão alterar imagem de prefil do usuário">
 				<button class="form-btn">
-					<label for="avatar">Alterar Imagem</label>
-					<input type="file" id="avatar" name="avatar" accept="image/png" style="display: none;">
+					<label for="profile-avatar">Alterar Imagem</label>
+					<input type="file" id="profile-avatar" name="avatar" accept="image/png" style="display: none;">
 				</button>
 			</div>
 			<div class="profile-form">
+				<div class="erro-msg" id="perfil-erro-msg"></div>
 				<label>
 					<h2>Nome de exibição: </h2>
-					<input type="text" name="name" value="Ailton Gabriel" disabled="true">
+					<input type="text" id="username" disabled="true">
 				</label>
 				<div class="profile-actions">
-					<button class="form-btn"><img src="img/edit.png">Alterar nome de exibição</button>
-					<button class="form-btn"><img src="img/reset-password.png">Alterar senha</button>
-					<button class="form-btn"><img src="img/logout.png">Logout</button>
+					<button class="form-btn" id="save-username-btn"><img src="img/save-changes.png">Salvar Alterações</button>
+					<button class="form-btn" id="change-username-btn"><img src="img/edit.png">Alterar nome de exibição</button>
+					<button class="form-btn" id="reset-password"><img src="img/reset-password.png">Alterar senha</button>
+					<button class="form-btn" id="logout-btn"><img src="img/logout.png">Logout</button>
 				</div>
 			</div>
 		</div>
-	</article>
+	</section>
 
 </body>
 </html>

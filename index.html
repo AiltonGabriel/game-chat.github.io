@@ -2,9 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="theme-color" content="#05242B">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
 	<title>Game - Chat</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="shortcut icon" href="img/favicon.ico" />
+
+	<script src="js/firebase/firebase-app.js"></script>
+	<script src="js/firebase/firebase-analytics.js"></script>
+	<script src="js/firebase/firebase-database.js"></script>
+	<script src="js/firebase/firebase-storage.js"></script>
+	<script src="js/firebase/firebase-auth.js"></script>
+
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
@@ -15,172 +26,62 @@
 			<div class="logo">
 				<a href="index.html">
 					<h1>
-						<img src="img/logo.png" class="logo-img">
+						<img src="img/logo.png" class="logo-img" title="Game-Chat" alt="Imagem do logo do Game-Chat">
 						<spam>GAME - CHAT</spam>
 					</h1>
 				</a>
 			</div>
 
-			<a href="sobre.html" id="btn-sobre"><img src="img/info.png" ></a>
+			<a href="sobre.html" target="_blank" id="btn-sobre"><img src="img/info.png" title="Sobre" alt="Botão Sobre"></a>
 		
 
 			<a href="perfil.html" id="profile-link">
-				<img src="img/user-info.png" id="user-img">
-				<div id="user-name">User</div>
+				<img src="img/loading-min.gif" id="user-img" title="Imagem de Perfil" alt="Imagem de prefil do usuário">
+				<div id="user-name" class="scrollable">User</div>
 				<img src="img/game-info.png" id="btn-profile-link-img">
 			</a>
 			
 		</nav>
 	</header>
 	
-	<nav id="tabs-menu">
+	<nav id="tabs-menu" class="scrollable">
 
-		<div id="tab-chats" class="tabs">Chats</div>
-
-		<div class="tabs" id="game-chat-1">Game 1
-			<img src="img/close.png" class="close-tab">
-		</div>
-
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Nome muito grande
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
-		<div class="tabs" id="game-chat-2">Game 2
-			<img src="img/close.png" class="close-tab">
-		</div>
+		<div id="tab-chats" class="tabs" onclick="switchTab('chats')">Chats</div>
 
 	</nav>
 
-	<article>
+	<article id="wrapper">
 
 		<section id="chats">
 			<header class="header-game-chat">
-				<div class="list-functions">
+				<div class="list-functions" id="orderBy">
 					Ordenar por:
-					<select id="ordem-games" name="ordem-games" class="chat-list-input">
-						<option value="msg-recente">Mensagem mais recente</option>
-						<option value="max-msg">Maior número de mensagens</option>
-						<option value="max-players">Maior número de jogadores</option>
+					<select id="game-list-order" name="ordem-games" class="chat-list-input" title="Selecionar ordem">
+						<option value="player_count" selected>Número de jogadores</option>
+						<option value="msg_count">Número de mensagens</option>
 					</select>
-					<img src="img/down-up-arrow.png" id="asc-desc-btn">
+					<img src="img/down-up-arrow.png" id="asc-desc-btn" class="list-functions-btn" title="Inverter ordem" alt="Botão inverter ordem">
 				</div>
 
 				<div class="list-functions">
-					<input type="text" name="pesquisar" id="pesquisar" class="chat-list-input">
-					<img src="img/search.png" id="search-button">
+					<img src="img/back.png" id="back-search-button" class="list-functions-btn" title="Voltar para a listagem" alt="Botão voltar para a listagem">
+					<input type="text" name="pesquisar" id="search-name-input" class="chat-list-input">
+					<img src="img/search.png" id="search-button" class="list-functions-btn" title="Pesquisar" alt="Botão pesquisar">
 				</div>
 			</header>
 
-			<div class="content" id="chat-list">
+			<div class="content scrollable" id="chat-list">
 				<div class="games">
 					<div>
-						<img src="img/not-found.png" class="img_game">
-						Em breve
+						<img src="img/not-found.png" class="img_game" title="Imagem não encontrada" alt="Imagem não encontrada">
+						<p class="game-name">Erro ao carregar!</p>
 					</div>
 					<img src="img/open.png" class="expand-img">
 				</div>
 			</div>
 
-		</section>
+			<button id="load-more-btn" class="form-btn">Ver mais</button>
 
-		<section id="jogo1" class="game-chat">
-			<section id="game-info-panel-1" class="game-info-panel">
-				Em breve!	
-			</section>
-			<header class="header-game-chat">
-				<img src="img/not-found.png" class="img_game">
-				<h2 class="header-text">Nome do jogo</h2>
-				<img src="img/game-info.png" class="expand-img">
-			</header>
-
-			<div class="content" id="msg-area">
-				<div class="msg">
-					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
-					<spam class="msg-balloon">OI</spam>
-					<div class="msg-hora">12:30</div>
-				</div>
-				<div class="msg">
-					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
-					<spam class="msg-balloon">Teste mensagem imensa kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-					kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-					kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</spam>
-					<spam class="msg-hora">12:30</spam>
-				</div>
-				<div class="msg">
-					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
-					<spam class="msg-balloon">OI</spam>
-					<div class="msg-hora">12:30</div>
-				</div>
-				<div class="my-msg">
-					<div class="my-name"><img src="img/user-info.png" class="sender-img">Eu</div>
-					<spam class="msg-hora">12:30</spam>
-					<spam class="my-msg-balloon">Teste mensagem grande</spam>
-				</div>
-				<div class="msg">
-					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 2</div>
-					<spam class="msg-balloon">OI</spam>
-					<spam class="msg-hora">12:30</spam>
-				</div>
-				<div class="my-msg">
-					<div class="my-name"><img src="img/user-info.png" class="sender-img">Eu</div>
-					<spam class="msg-hora">12:30</spam>
-					<spam class="my-msg-balloon">OI</spam>
-				</div>
-				<div class="msg">
-					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 1</div>
-					<spam class="msg-balloon">OI</spam>
-					<spam class="msg-hora">12:30</spam>
-				</div>
-				<div class="msg">
-					<div class="sender-name"><img src="img/user-info.png" class="sender-img">User 2</div>
-					<spam class="msg-balloon">Teste mensagem grande</spam>
-					<spam class="msg-hora">12:30</spam>
-				</div>
-			</div>
-
-			<div class="write-msg-area">
-				<textarea></textarea>
-				<button id="btn-send">Enviar</button>
-			</div>
 		</section>
 
 	</article>
