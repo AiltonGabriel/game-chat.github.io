@@ -86,6 +86,8 @@ h1{
 	line-height: 7vh;
 	box-shadow: 0 5px 10px black;
 	background-color: #1B2838;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 #btn-sobre{
