@@ -862,7 +862,7 @@ textarea{
 
 	.write-msg-area{
    		font-size: 200%;
-   		height: 8vh;
+   		/*height: 8vh;*/
 	}
 
 	textarea{
@@ -925,4 +925,10 @@ textarea{
 		font-size: 50%;
 	}
 
+}
+
+@media (max-height: 750px){
+	.write-msg-area{
+   		height: 10vh;
+	}
 }
