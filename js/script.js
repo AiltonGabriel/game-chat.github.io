@@ -328,7 +328,7 @@ function updateGameList(orderBy, inverse, nrItens, pag, searchName){
 			html = `<div class="games" onclick="openChat(${app.appid})" >
 						<div class="scrollable">
 							<img src="${app.header_image}" class="img_game" title="${app.name}" alt="Imagem de ${app.name}">
-							${app.name}
+							<p>${app.name}</p>
 						</div>
 						<img src="img/open.png" class="expand-img" title="Abrir chat" alt="Botão abrir chat">
 					</div>`;
