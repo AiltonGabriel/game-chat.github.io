@@ -41,7 +41,7 @@ auth.onAuthStateChanged(function(user) {
 	else{
 		usuarioNaoVerificado = null;
 	  	// console.log("logado");
-	  	if ((currentUrl == "/login.html") || (currentUrl == "/cadastro.html")){
+	  	if ((currentUrl == "/login.html") || (currentUrl == "/cadastro.html") || (currentUrl == "/")){
 	  		window.location.replace("index.html");
 	  	}
 
@@ -63,7 +63,7 @@ auth.onAuthStateChanged(function(user) {
   }
   else{
   	// console.log("não logado");
-  	if ((currentUrl != "/login.html") && (currentUrl != "/cadastro.html")) {
+  	if (((currentUrl != "/login.html") && (currentUrl != "/cadastro.html")) || (currentUrl == "/")) {
     	window.location.replace("login.html");
   	}
   }
