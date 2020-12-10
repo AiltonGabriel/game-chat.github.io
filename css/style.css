@@ -927,7 +927,7 @@ textarea{
 
 }
 
-@media (max-height: 750px){
+@media (max-height: 750px) and (max-width: 750px){
 	.write-msg-area{
    		height: 10vh;
 	}
