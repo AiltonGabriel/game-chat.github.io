@@ -144,8 +144,7 @@ h1{
 	box-shadow: 0 5px 10px black;
 	text-decoration: none;
 	cursor: pointer;
-	max-width: 33vw;
-	min-width: 15vw;
+	width: 17.5vw;
 }
 
 #profile-link:hover{
@@ -896,7 +895,7 @@ textarea{
 	}
 
 	#profile-link{
-		width: 33vw;
+		width: 30vw;
 	}
 
 	.profile-page-content{
