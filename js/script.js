@@ -143,13 +143,16 @@ async function cadastro(displayName, email, password, checkPassword, termosEPoli
 						var errorMessage = error.message;
 						if (errorCode == "auth/email-already-in-use"){
 							msgErro = "O endereço de e-mail já está sendo usado por outra conta!"
-						}else{
-							if(error.code == "auth/weak-password"){
+						}
+						else if(error.code == "auth/weak-password"){
 								msgErro = "A senha deve ter pelo menos 6 caracteres!"
-							}
-							else{
-								msgErro = "Ocorreu um erro ao criar o usuário!";
-							}
+						}
+						else if (errorCode == "auth/invalid-email") {
+							msgErro = "O endereço de e-mail está formatado incorretamente!";
+						}
+						else{
+							console.log("")
+							msgErro = "Ocorreu um erro ao criar o usuário!";
 						}
 					});
 				}
