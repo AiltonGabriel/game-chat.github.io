@@ -136,16 +136,20 @@ async function cadastro(displayName, email, password, checkPassword, termosEPoli
 							// console.log(error);
 						});
 						user.sendEmailVerification().catch(function(error){
-							alert("Erro ao enviar verificação de e-mail");
+							alert("Erro ao enviar verificação de e-mail!");
 						})
 					}).catch(function(error) {
 						var errorCode = error.code;
 						var errorMessage = error.message;
 						if (errorCode == "auth/email-already-in-use"){
-							msgErro = "O endereço de e-mail já está sendo usado por outra conta."
+							msgErro = "O endereço de e-mail já está sendo usado por outra conta!"
 						}else{
-							msgErro = "Ocorreu um erro ao criar o usuário!";
-							// console.log(error);
+							if(error.code == "auth/weak-password"){
+								msgErro = "A senha deve ter pelo menos 6 caracteres!"
+							}
+							else{
+								msgErro = "Ocorreu um erro ao criar o usuário!";
+							}
 						}
 					});
 				}
