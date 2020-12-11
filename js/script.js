@@ -872,6 +872,34 @@ $( document ).ready(function() {
 		}
     });
 
+	/* Evento de clique no botão de excluir a imagem do perfil. */
+    $("#delete-img-btn").click(function(){
+		let imageRef = storage.ref().child('users/' + currentUser.uid + '/images/avatar.png');
+		imageRef.delete().then(function(){
+			$("#profile-img").attr("src","img/loading-min.gif");
+			$("#perfil-erro-msg").hide();
+			$("#profile-avatar").val(undefined);
+			imageRef.getDownloadURL().then(function(url) {
+				$("#profile-img").attr("src",url);
+			}).catch(function(error) {
+				$("#profile-img").attr("src","img/default-avatar.png");
+				if(error.code == 'storage/unauthorized'){
+					alert("Sem autorização");
+				}
+			});
+		}).catch(function(error){
+			console.log(error.code);
+			if(error.code == "storage/object-not-found"){
+				$("#perfil-erro-msg").text("Você já está sem imagem de perfil!");
+			}
+			else{
+				$("#perfil-erro-msg").text("Ocorreu um erro ao apagar a imagem!");
+			}
+			$("#perfil-erro-msg").show();
+		});
+
+    });
+
     /* Evento de tecla pressionada nos inputs referentes ao nome de exibição. Verifica se o nome está disponível .*/
     $("#username, #cadastro-displayname-input").keyup(function(){
     	let displayName = $(this);

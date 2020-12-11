@@ -1,6 +1,6 @@
-/* Tags gerais */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* Tags gerais */
 *{
 	margin: 0;
 	padding: 0;
@@ -165,6 +165,12 @@ h1{
 .profile-img-actions{
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	height: 55vh;
+}
+
+.profile-img-actions > button{
+	height: 7.5vh;
 }
 
 .profile-img-actions img{
@@ -251,7 +257,7 @@ h1{
 	cursor: pointer;
 }
 
-#logout-btn{
+#logout-btn, #delete-img-btn{
 	background-color: #DC143C;
 }
 
@@ -866,7 +872,6 @@ textarea{
 
 	.write-msg-area{
    		font-size: 200%;
-   		/*height: 8vh;*/
 	}
 
 	textarea{
@@ -900,6 +905,10 @@ textarea{
 
 	.profile-page-content{
 		font-size: 125%;
+	}
+
+	.profile-img-actions{
+		height: 35vh;
 	}
 
 	.profile-img-actions img{
